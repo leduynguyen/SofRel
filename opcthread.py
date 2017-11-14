@@ -57,7 +57,7 @@ def read_tags():
         return False
 
     # Start of file
-	line = util.res['settings']['START_OF_FILE']
+    line = util.res['settings']['START_OF_FILE'].encode('utf-8')
     response.append(line)	
 	
 	# Print reading data
