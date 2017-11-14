@@ -4,8 +4,8 @@
         "SERVER": "SOFREL.TelemetryOPCServer",
         "DEST_DIR": "storage",
         "STT_NAME": "data (ThepMienNam--slave) ",
-	"LINE": "ThepMienNam--slave"
-	"START_OF_FILE": "Tagname; TimeStamp; Value; Unit; DataQuality"
+		"LINE": "ThepMienNam--slave",
+		"START_OF_FILE": "Tagname; TimeStamp; Value; Unit; DataQuality",
         "PERIOD": "1"
     },
     "OPC": {
