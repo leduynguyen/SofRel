@@ -9,8 +9,6 @@ from util import res
 
 '''
 	Window Class 
-	...
-	...
 '''
 class Window(Frame):
     def __init__(self, master=None):
@@ -75,8 +73,6 @@ class Window(Frame):
 
 '''
 	on_closing function 
-	...
-	...
 '''
 def on_closing():
     # global is_running
@@ -101,6 +97,6 @@ app.master.mainloop()
 
 ''' 
 ================================================================================
-								End of file
+								END OF FILE
 ================================================================================
 ''' 

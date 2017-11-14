@@ -27,6 +27,6 @@ with open('config.json') as json_data_file:
 sorted_tags = sorted(res['OPC'].values(), key=lambda x: int(x['index']))
 ''' 
 ================================================================================
-								End of file
+								END OF FILE
 ================================================================================
 ''' 
