@@ -58,9 +58,9 @@ def read_tags():
 
     # Start of file
     line = util.res['settings']['START_OF_FILE'] + '\n'
-	line = line.encode('utf-8')
+    line = line.encode('utf-8')
     response.append(line)	
-	
+
 	# Print reading data
     for tag in util.sorted_tags:
         res = opc.read(tag['tag'])
