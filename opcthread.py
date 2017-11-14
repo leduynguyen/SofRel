@@ -7,8 +7,6 @@ import util
 
 '''
     OPCThread Class 
-    ...
-    ...
 '''
 
 
@@ -25,8 +23,8 @@ class OpcThread(Thread):
             try:
                 if util.is_connected and util.time_stamp != prev:
                     prev = util.time_stamp
-                    out_path = util.res['settings']['DEST_DIR'] + \
-                               '\\' + util.res['settings']['STT_NAME'] + \
+                    out_path = util.res['settings']['DEST_DIR'] + '\\' + \
+                               util.res['settings']['STT_NAME'] + \
                                util.time_stamp + '.txt'
                     res = read_tags()
                     if res:
@@ -39,9 +37,12 @@ class OpcThread(Thread):
             # DEBUGGING
             # print 'is_running : ' + str(util.is_running)
 
-
 prev = ''
 response = []
+
+'''
+    read_tag function
+'''
 
 def read_tags():
     global response
@@ -56,17 +57,17 @@ def read_tags():
         return False
 
     # Start of file
-    line = '[Data] \n'.encode('utf-8')
-    response.append(line)
-    line = 'Tagname;TimeStamp;Value;DataQuality \n'.encode('utf-8')
+	line = util.res['settings']['START_OF_FILE']
     response.append(line)	
 	
 	# Print reading data
     for tag in util.sorted_tags:
         res = opc.read(tag['tag'])
-        line = 'ThepMienNam--slave.' + tag['name'] + ';' + \
+        line = util.res['settings']['LINE'] + \
+               tag['name'] + ';' + \
 			   util.time_stamp_ + ';' + \
                str(res[0]) + ';' + \
+			   tag['unit'] + ':' + \
                str(res[1]) + '\n'
         # print line
         line = line.encode('utf-8')
@@ -76,6 +77,6 @@ def read_tags():
 
 ''' 
 ================================================================================
-                                End of file
+                                END OF FILE
 ================================================================================
 '''
