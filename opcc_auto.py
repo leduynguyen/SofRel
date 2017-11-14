@@ -1,10 +1,8 @@
-from Tkinter import *
-
 import datetime
-
-from opcthread import *
-
 import util
+
+from Tkinter import *
+from opcthread import *
 from util import res
 
 '''
