@@ -25,7 +25,7 @@
             "name": "NO2",
             "tag": "S500_Nox/S500/NI/Value(103)",
             "unit": "mg/Nm3"
-        },
+        }
     },
 
     "naming": {
