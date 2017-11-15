@@ -1,0 +1,4 @@
+Tagname;TimeStamp;Value;Unit;DataQuality
+TAG_NI;2017-11-16 00:19:00;None;mg/Nm3;Error
+TAG_SO2;2017-11-16 00:19:00;None;mg/Nm3;Error
+TAG_NO2;2017-11-16 00:19:00;None;mg/Nm3;Error
