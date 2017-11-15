@@ -1,17 +1,16 @@
 {
-    "settings" : {
-        "HOST": "localhost",
+    "settings": {
         "SERVER": "SOFREL.TelemetryOPCServer",
         "DEST_DIR": "storage",
-        "STT_NAME": "data (ThepMienNam--slave) ",
-		"LINE": "ThepMienNam--slave",
-		"START_OF_FILE": "Tagname; TimeStamp; Value; Unit; DataQuality",
+        "FILE_NAME": "ThepMienNam--slave_",
+		"START_OF_FILE": "Tagname;TimeStamp;Value;Unit;DataQuality",
+        "LINE": "TAG_",
         "PERIOD": "1"
     },
     "OPC": {
-        "NO": {
+        "NI": {
             "index": "1",
-            "name": "NO",
+            "name": "NI",
             "tag": "S500_Nox/S500/NI/Value(101)",
             "unit": "mg/Nm3"
         },
@@ -27,53 +26,11 @@
             "tag": "S500_Nox/S500/NI/Value(103)",
             "unit": "mg/Nm3"
         },
-        "NOx": {
-            "index": "4",
-            "name": "NOx",
-            "tag": "S500_Nox/S500/NI/Value(104)",
-            "unit": "mg/Nm3"
-        },
-        "CO2": {
-            "index": "5",
-            "name": "CO2",
-            "tag": "S500_Nox/S500/NI/Value(105)",
-            "unit": "%"
-        },
-        "CO": {
-            "index": "6",
-            "name": "CO",
-            "tag": "S500_Nox/S500/NI/Value(106)",
-            "unit": "mg/Nm3"
-        },
-        "TEMPERATURE": {
-            "index": "7",
-            "name": "TEMPERATURE",
-            "tag": "S500_Nox/S500/NI/Value(107)",
-            "unit": "°C"
-        },
-        "O2": {
-            "index": "8",
-            "name": "O2",
-            "tag": "S500_Nox/S500/NI/Value(108)",
-            "unit": "%"
-        },
-        "FLOW": {
-            "index": "10",
-            "name": "FLOW",
-            "tag": "S500_Nox/S500/NI/Value(110)",
-            "unit": "m3/h"
-        },
-        "DUST": {
-            "index": "9",
-            "name": "DUST",
-            "tag": "S500_Nox/S500/NI/Value(109)",
-            "unit": "mg/Nm"
-        }
     },
-    "naming" : {
+
+    "naming": {
         "TITLE": "OPC Client",
         "PROG_NAME": "CHƯƠNG TRÌNH TỰ ĐỘNG XUẤT FILE",
-
         "BTN_CONNECT": "KẾT NỐI",
         "BTN_DISCONNECT": "NGẮT KẾT NỐI",
         "LBL_CONNECT_OK": "Đã kết nối",

@@ -1,14 +1,11 @@
 from threading import *
 from OpenOPC import *
-
 import util
 
-# import resources as res
 
 '''
     OPCThread Class 
 '''
-
 
 class OpcThread(Thread):
     def __init__(self):
@@ -24,7 +21,7 @@ class OpcThread(Thread):
                 if util.is_connected and util.time_stamp != prev:
                     prev = util.time_stamp
                     out_path = util.res['settings']['DEST_DIR'] + '\\' + \
-                               util.res['settings']['STT_NAME'] + \
+                               util.res['settings']['FILE_NAME'] + \
                                util.time_stamp + '.txt'
                     res = read_tags()
                     if res:
@@ -36,9 +33,6 @@ class OpcThread(Thread):
             time.sleep(1)
             # DEBUGGING
             # print 'is_running : ' + str(util.is_running)
-
-prev = ''
-response = []
 
 '''
     read_tag function
@@ -56,12 +50,12 @@ def read_tags():
         util.cur_status = util.res['naming']['ERR_CONNECT']
         return False
 
-    # Start of file
+    # Print Start Of File
     line = util.res['settings']['START_OF_FILE'] + '\n'
     line = line.encode('utf-8')
     response.append(line)	
 
-	# Print reading data
+	# Print Reading Data
     for tag in util.sorted_tags:
         res = opc.read(tag['tag'])
         line = util.res['settings']['LINE'] + \
