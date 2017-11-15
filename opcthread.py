@@ -34,6 +34,9 @@ class OpcThread(Thread):
             # DEBUGGING
             # print 'is_running : ' + str(util.is_running)
 
+prev = ''
+response = []
+
 '''
     read_tag function
 '''
