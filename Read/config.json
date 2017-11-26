@@ -1,7 +1,7 @@
 {
     "settings": {
         "SERVER": "SOFREL.TelemetryOPCServer",
-        "DEST_DIR": "storage",
+        "DEST_DIR": "STORAGE",
         "FILE_NAME": "ThepMienNam--slave_",
 		"START_OF_FILE": "Tagname;TimeStamp;Value;DataQuality",
         "LINE": "TAG_",
