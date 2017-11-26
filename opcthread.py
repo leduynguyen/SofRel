@@ -65,7 +65,6 @@ def read_tags():
                tag['name'] + ';' + \
 			   util.time_stamp_ + ';' + \
                str(res[0]) + ';' + \
-			   tag['unit'] + ';' + \
                str(res[1]) + '\n'
         # print line
         line = line.encode('utf-8')
