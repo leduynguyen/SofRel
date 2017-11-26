@@ -26,8 +26,8 @@
     },
 
     "naming": {
-        "TITLE": "OPC Client",
-        "PROG_NAME": "CHƯƠNG TRÌNH TỰ ĐỘNG XUẤT FILE",
+        "TITLE": "SOFREL",
+        "PROG_NAME": "SOFREL READ",
         "BTN_CONNECT": "KẾT NỐI",
         "BTN_DISCONNECT": "NGẮT KẾT NỐI",
         "LBL_CONNECT_OK": "Đã kết nối",
