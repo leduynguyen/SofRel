@@ -3,7 +3,6 @@ from OpenOPC import *
 
 import util
 from util import res
-# import resources as res
 
 
 '''
@@ -21,26 +20,8 @@ class OpcThread(Thread):
             try:
                 for key in sorted(util.lst_command.keys()):
                     opc_stt = util.lst_command[key]
-                    if opc_stt in res['INVENTIA']['STATIONS']:
-                        opc_tag = '.'.join((opc_stt, "BO2"))
-                        burst_tag(opc_tag, 1, 0, 5)
-                    elif opc_stt == res['INVENTIA']['SPECIALS']:
-                        opc_tag = '.'.join((opc_stt, "BO3"))
-                        set_tag(opc_tag, 0)
-                        opc_tag = '.'.join((opc_stt, "BO2"))
-                        is_err = False
-                        for i in range(0, 5):
-                            if not burst_tag(opc_tag, 1, 0, 5):
-                                is_err = True
-                                break
-                            time.sleep(45)
-                        if not is_err:
-                            opc_tag = '.'.join((opc_stt, "BO3"))
-                            burst_tag(opc_tag, 1, 0, 5)
-                    else:
-                        # DEBUGGING
-                        print ("Invalid JSON input file")
-                        pass
+                    opc_tag = opc_stt.replace("--", "/")                    
+                    burst_tag(opc_tag, 1, 0, 5)
 
                 util.lst_command.clear()
             finally:
@@ -95,7 +76,7 @@ def set_tag(opc_tag, value):
 def write_tag(tag_name, value):
     try:
         opc = client()
-        opc.connect(res['INVENTIA']['SERVER'])
+        opc.connect(res['settings']['SERVER'])
     except:
         print ("Can NOT connect")
     result = opc.write((tag_name, value))
