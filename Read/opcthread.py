@@ -53,6 +53,10 @@ def read_tags():
         util.cur_status = util.res['naming']['ERR_CONNECT']
         return False
 
+    # Print as requirement
+    line = "[Data] \n"
+    line = line.encode('utf-8')
+    response.append(line)
     # Print Start Of File
     line = util.res['settings']['START_OF_FILE'] + '\n'
     line = line.encode('utf-8')
