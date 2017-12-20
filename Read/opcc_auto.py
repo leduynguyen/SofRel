@@ -25,16 +25,13 @@ class Window(Frame):
             period = int(res['settings']['PERIOD'])
             now = datetime.datetime.now()
             timing = now.minute
-            if timing % period == 0 and timing != cur_time:
+            if (now.second == 0) and (timing % period == 0) and (timing != cur_time):
                 cur_time = timing
                 if not opc.isAlive():
                     opc.start()
-                timestamp =  str(now.year) +'_'+ str(now.month).zfill(2) +'_'+ str(now.day).zfill(2) +'_'+ \
-                      str(now.hour).zfill(2) +'_'+ str(timing).zfill(2) +'_'+ str(0).zfill(2)
-                timestamp_ =  str(now.year) +'-'+ str(now.month).zfill(2) +'-'+ str(now.day).zfill(2) +' '+ \
-                      str(now.hour).zfill(2) +':'+ str(timing).zfill(2) +':'+ str(0).zfill(2)
+                timestamp =  str(now.year) + str(now.month).zfill(2)+ str(now.day).zfill(2) + \
+                             str(now.hour).zfill(2) + str(now.minute).zfill(2) + str(now.second).zfill(2)
                 util.time_stamp = timestamp					  
-                util.time_stamp_ = timestamp_
 
         else:
             pass

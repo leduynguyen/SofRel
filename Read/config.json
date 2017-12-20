@@ -2,25 +2,27 @@
     "settings": {
         "SERVER": "SOFREL.TelemetryOPCServer",
         "DEST_DIR": "STORAGE",
-        "FILE_NAME": "ThepMienNam--slave_",
-		"START_OF_FILE": "Tagname;TimeStamp;Value;DataQuality",
-        "LINE": "TAG_",
+        "FILE_NAME": "TepTinh_TenCoso_TenTram_",
+        "LINE": "ThepMienNam--slave.",
         "PERIOD": "1"
     },
     "OPC": {
         "NI": {
             "index": "1",
             "name": "NI",
+            "unit": "mg/L",
             "tag": "S500_Nox/S500/NI/Value(101)"
         },
         "SO2": {
             "index": "2",
             "name": "SO2",
+            "unit": "mg/Nm3",
             "tag": "S500_Nox/S500/NI/Value(102)"
         },
         "NO2": {
             "index": "3",
             "name": "NO2",
+            "unit": "%V",
             "tag": "S500_Nox/S500/NI/Value(103)"
         }
     },

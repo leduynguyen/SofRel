@@ -9,8 +9,6 @@ is_running = True
 
 comm_state = 0
 time_stamp = ''
-time_stamp_ = ''
-
 cur_status = ''
 
 lock = threading.Lock()

@@ -53,23 +53,30 @@ def read_tags():
         util.cur_status = util.res['naming']['ERR_CONNECT']
         return False
 
-    # Print as requirement
-    line = "[Data] \n"
-    line = line.encode('utf-8')
-    response.append(line)
-    # Print Start Of File
-    line = util.res['settings']['START_OF_FILE'] + '\n'
-    line = line.encode('utf-8')
-    response.append(line)	
-
 	# Print Reading Data
     for tag in util.sorted_tags:
+        #Read raw data
         res = opc.read(tag['tag'])
-        line = util.res['settings']['LINE'] + \
-               tag['name'] + ';' + \
-			   util.time_stamp_ + ';' + \
-               str(res[0]) + ';' + \
-               str(res[1]) + '\n'
+        
+        # Process data quality into status
+        if res[1] == "Error":
+            status = "02"
+        elif res[1] == "Good":
+            status = "01"
+        else:
+            status = "00"
+            
+        # Convert the float data with 2 number
+        if(type(res[0]) is float):
+            res_val = round(res[0],2)            
+        else:
+            res_val = res[0]
+       
+        line = util.res['settings']['LINE'] + tag['name'] + '\t' + \
+               str(res_val) + '\t' + \
+               tag['unit'] + '\t' + \
+               util.time_stamp + '\t' + \
+               status + '\n'
         # print line
         line = line.encode('utf-8')
         response.append(line)
