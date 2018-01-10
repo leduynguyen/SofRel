@@ -62,9 +62,9 @@ def read_tags():
         if res[1] == "Error":
             status = "02"
         elif res[1] == "Good":
-            status = "01"
-        else:
             status = "00"
+        else:
+            status = "01"
             
         # Convert the float data with 2 number
         if(type(res[0]) is float):
