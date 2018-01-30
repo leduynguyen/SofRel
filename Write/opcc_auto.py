@@ -2,6 +2,7 @@ from Tkinter import *
 from opcthread import *
 
 import util
+import shutil
 from util import res
 
 '''
@@ -32,10 +33,11 @@ class Window(Frame):
                     if matches is not None:
                         stt_name = matches.group(1)
                         idx = matches.group(2)
-
                         util.lst_command[idx] = stt_name
+                        
+                        stored_file = 'STORAGE\\' + item
+                        shutil.move(item_path, stored_file)
 
-                        os.rename(item_path, 'STORAGE\\' + item)
         else:
             pass
         self.master.after(100, self.poll)
